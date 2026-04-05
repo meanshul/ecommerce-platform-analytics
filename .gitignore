@@ -1,7 +1,11 @@
 # Docker cache
 docker/logs/
-docker/minio/
 docker/plugins/
 docker/postgres/
 
+# Ignore MinIO general folder but keep data
+docker/minio/data/.minio.sys
+!docker/minio/data/sourcedata/ecommerce_dataset/*
+
+# Environment file
 .env

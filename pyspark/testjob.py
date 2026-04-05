@@ -3,7 +3,10 @@ from pyspark.sql.functions import col
 
 if __name__ == "__main__":
     # Create Spark session
-    spark = SparkSession.builder.appName("test-job").master("spark://spark-master:7077").config("spark.eventLog.enabled", "true").config("spark.eventLog.dir", "file:///opt/spark/work-dir/spark-events").getOrCreate()
+    spark = SparkSession.builder.appName("test-job") \
+        .master("spark://spark-master:7077") \
+        .config("spark.eventLog.enabled", "true") \
+        .config("spark.eventLog.dir", "file:///opt/spark/work-dir/spark-events").getOrCreate()
 
     # Sample data
     data = [
